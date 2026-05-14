@@ -30,8 +30,8 @@ export default function Navbar() {
             <Image
               src="/para-title-logo.png"
               alt="PARA Logo"
-              width={190}
-              height={62}
+              width={240}
+              height={78}
               style={{ objectFit: 'contain' }}
               priority
             />

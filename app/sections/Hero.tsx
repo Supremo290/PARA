@@ -219,10 +219,10 @@ export default function Hero() {
 
       {/* ── Two-column layout ── */}
       <div
-        className="relative z-10 w-full max-w-7xl mx-auto pt-28 pb-20"
-        style={{ paddingLeft: '6rem', paddingRight: '3rem' }}
+        className="relative z-10 w-full pt-28 pb-20"
+        style={{ paddingLeft: '6rem', paddingRight: '0', overflow: 'visible' }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', gap: '4rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '4fr 8fr', alignItems: 'center', gap: '2rem' }}>
 
           {/* ── LEFT: text content ── */}
           <div>
@@ -341,16 +341,16 @@ export default function Hero() {
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
-            style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginRight: '-6rem' }}
           >
             {/* Glow behind the image */}
             <div
               className="device-glow"
               style={{
                 position: 'absolute',
-                width: '80%', height: '60%',
+                width: '85%', height: '65%',
                 background: 'radial-gradient(ellipse, rgba(99,102,241,0.35) 0%, rgba(139,92,246,0.2) 40%, transparent 70%)',
-                filter: 'blur(40px)',
+                filter: 'blur(60px)',
                 borderRadius: '50%',
                 zIndex: 0,
               }}
@@ -360,8 +360,8 @@ export default function Hero() {
               <Image
                 src="/PARA-phone-desktop.png"
                 alt="PARA dashboard and mobile app preview"
-                width={680}
-                height={500}
+                width={1200}
+                height={880}
                 style={{
                   width: '100%',
                   height: 'auto',
