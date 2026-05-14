@@ -8,32 +8,37 @@ export default function Navbar() {
   const [activeLink, setActiveLink] = useState('Home')
 
   const navLinks = [
-    { label: 'Home',        href: '#home' },
-    { label: 'About',       href: '#about' },
-    { label: 'Features',    href: '#features' },
-    { label: 'How It Works',href: '#how-it-works' },
-    { label: 'Solutions',   href: '#solutions' },
-    { label: 'Contact',     href: '#contact' },
+    { label: 'Home',         href: '#home' },
+    { label: 'About',        href: '#about' },
+    { label: 'Features',     href: '#features' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Solutions',    href: '#solutions' },
+    { label: 'Contact',      href: '#contact' },
   ]
 
   return (
     <nav className="fixed w-full top-0 z-50" style={{ background: 'transparent' }}>
-      <div style={{ maxWidth: '1280px', margin: '0 auto', paddingLeft: '6rem', paddingRight: '3rem' }}>
+      {/* Full-width inner — logo hugs the left edge at 6rem, matching Hero content */}
+      <div style={{ paddingLeft: '6rem', paddingRight: '3rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px' }}>
 
-          {/* Logo — bigger */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }} onClick={() => setActiveLink('Home')}>
+          {/* Logo — bigger, far-left aligned */}
+          <Link
+            href="/"
+            style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}
+            onClick={() => setActiveLink('Home')}
+          >
             <Image
               src="/para-title-logo.png"
               alt="PARA Logo"
-              width={168}
-              height={56}
+              width={175}
+              height={58}
               style={{ objectFit: 'contain' }}
               priority
             />
           </Link>
 
-          {/* Nav links */}
+          {/* Nav links — right side */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
             {navLinks.map((link) => (
               <Link
@@ -54,7 +59,7 @@ export default function Navbar() {
                   <span style={{
                     position: 'absolute', bottom: 0, left: 0,
                     width: '100%', height: '2px',
-                    background: '#a78bfa',
+                    background: 'linear-gradient(90deg, #a78bfa, #818cf8)',
                     borderRadius: '9999px', display: 'block',
                   }} />
                 )}
