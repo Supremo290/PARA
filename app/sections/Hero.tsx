@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { MapPin, BarChart3, Shield, Sparkles } from 'lucide-react'
+import { MapPin, BarChart3, Shield, Sparkles, ArrowRight, Play } from 'lucide-react'
 
 const features = [
   {
@@ -222,12 +222,12 @@ export default function Hero() {
         className="relative z-10 w-full pt-28 pb-20"
         style={{ paddingLeft: '6rem', paddingRight: '0', overflow: 'visible' }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '4fr 8fr', alignItems: 'center', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '3fr 9fr', alignItems: 'center', gap: '2rem' }}>
 
           {/* ── LEFT: text content ── */}
           <div>
             {/* Badge */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -252,7 +252,7 @@ export default function Hero() {
                   Smart Transport. Real Impact.
                 </span>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Heading */}
             <motion.div
@@ -263,11 +263,11 @@ export default function Hero() {
               style={{ isolation: 'isolate' }}
             >
               <h1
-                className="font-extrabold leading-[1.08] tracking-tight"
-                style={{ fontSize: 'clamp(2.6rem, 4.2vw, 4.2rem)' }}
+                className="font-extrabold leading-[1.12] tracking-tight"
+                style={{ fontSize: 'clamp(1.6rem, 2.4vw, 2.4rem)' }}
               >
                 <span style={{ display: 'block', color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>
-                  Smarter Journeys.
+                  WELCOME TO PARA
                 </span>
                 <span
                   style={{
@@ -281,7 +281,7 @@ export default function Hero() {
                     mixBlendMode: 'normal',
                   }}
                 >
-                  Stronger Communities.
+                  PUV TRACKING SYSTEM
                 </span>
               </h1>
             </motion.div>
@@ -291,10 +291,68 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.22 }}
-              style={{ color: '#94a3b8', fontSize: '1rem', lineHeight: 1.75, maxWidth: '460px', marginBottom: '3rem' }}
+              style={{ color: '#94a3b8', fontSize: '1rem', lineHeight: 1.75, maxWidth: '460px', marginBottom: '1.75rem' }}
             >
               PARA connects passengers, drivers, and transport cooperatives through real-time data, intelligent insights, and seamless coordination for a better commuting experience.
             </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '2.5rem' }}
+            >
+              {/* Get Started */}
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '0.55rem',
+                  padding: '0.75rem 1.6rem',
+                  borderRadius: '0.6rem',
+                  background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                  color: '#ffffff',
+                  fontWeight: 600,
+                  fontSize: '0.925rem',
+                  border: 'none',
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 24px rgba(37,99,235,0.45)',
+                  transition: 'box-shadow 0.2s',
+                }}
+              >
+                Get Started
+                <ArrowRight style={{ width: '16px', height: '16px' }} />
+              </motion.button>
+
+              {/* Watch Demo */}
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '0.55rem',
+                  padding: '0.75rem 1.6rem',
+                  borderRadius: '0.6rem',
+                  background: 'rgba(10, 14, 40, 0.7)',
+                  color: '#e2e8f0',
+                  fontWeight: 600,
+                  fontSize: '0.925rem',
+                  border: '1px solid rgba(148,163,184,0.25)',
+                  cursor: 'pointer',
+                  backdropFilter: 'blur(8px)',
+                  transition: 'border-color 0.2s',
+                }}
+              >
+                Watch Demo
+                <span style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  width: '22px', height: '22px', borderRadius: '50%',
+                  background: 'rgba(255,255,255,0.15)',
+                }}>
+                  <Play style={{ width: '11px', height: '11px', fill: '#e2e8f0' }} />
+                </span>
+              </motion.button>
+            </motion.div>
 
             {/* Feature icons */}
             <motion.div
@@ -341,14 +399,14 @@ export default function Hero() {
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
-            style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', marginRight: '-6rem' }}
+            style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingRight: '4rem' }}
           >
             {/* Glow behind the image */}
             <div
               className="device-glow"
               style={{
                 position: 'absolute',
-                width: '85%', height: '65%',
+                width: '88%', height: '68%',
                 background: 'radial-gradient(ellipse, rgba(99,102,241,0.35) 0%, rgba(139,92,246,0.2) 40%, transparent 70%)',
                 filter: 'blur(60px)',
                 borderRadius: '50%',
@@ -360,8 +418,8 @@ export default function Hero() {
               <Image
                 src="/PARA-phone-desktop.png"
                 alt="PARA dashboard and mobile app preview"
-                width={1200}
-                height={880}
+                width={1600}
+                height={1170}
                 style={{
                   width: '100%',
                   height: 'auto',
