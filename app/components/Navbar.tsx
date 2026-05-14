@@ -34,7 +34,7 @@ export default function Navbar() {
         borderBottom: isScrolled ? '1px solid rgba(139, 92, 246, 0.1)' : 'none',
       }}
     >
-      <div style={{ paddingLeft: '1.5rem', paddingRight: '3rem' }}>
+      <div style={{ paddingLeft: '0.5rem', paddingRight: '3rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '96px' }}>
 
           {/* Logo — bigger, aligned with hero text below */}
