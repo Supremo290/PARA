@@ -146,9 +146,9 @@ export default function Hero() {
                         <div className="relative h-36 rounded-xl border border-accent-blue/20 bg-gradient-to-br from-accent-blue/15 via-transparent to-purple-500/10 overflow-hidden">
                           <div className="absolute top-5 left-12 w-24 h-24 rounded-full bg-orange-400/30 blur-2xl" />
                           <div className="absolute bottom-2 right-6 w-20 h-20 rounded-full bg-red-400/25 blur-2xl" />
-                          <div className="absolute top-8 left-8 text-lg">🚐</div>
-                          <div className="absolute top-12 right-10 text-lg">🚌</div>
-                          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-lg">🚕</div>
+                          <div aria-hidden="true" className="absolute top-8 left-8 text-lg">🚐</div>
+                          <div aria-hidden="true" className="absolute top-12 right-10 text-lg">🚌</div>
+                          <div aria-hidden="true" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-lg">🚕</div>
                         </div>
                       </div>
                     </div>
