@@ -18,11 +18,10 @@ export default function Navbar() {
 
   return (
     <nav className="fixed w-full top-0 z-50" style={{ background: 'transparent' }}>
-      {/* Full-width inner — logo hugs the left edge at 6rem, matching Hero content */}
       <div style={{ paddingLeft: '6rem', paddingRight: '3rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px' }}>
 
-          {/* Logo — bigger, far-left aligned */}
+          {/* Logo — bigger, far left */}
           <Link
             href="/"
             style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}
@@ -31,14 +30,14 @@ export default function Navbar() {
             <Image
               src="/para-title-logo.png"
               alt="PARA Logo"
-              width={175}
-              height={58}
+              width={190}
+              height={62}
               style={{ objectFit: 'contain' }}
               priority
             />
           </Link>
 
-          {/* Nav links — right side */}
+          {/* Nav links */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
             {navLinks.map((link) => (
               <Link
