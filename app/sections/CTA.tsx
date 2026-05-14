@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 export default function CTA() {
   return (
     <section id="contact" className="relative py-20 px-4 sm:px-6 lg:px-8">
+      <div id="solutions" className="absolute -top-24" />
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
