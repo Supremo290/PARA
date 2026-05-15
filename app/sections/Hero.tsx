@@ -249,7 +249,7 @@ export default function Hero() {
         className="relative z-10 w-full pb-20"
         style={{ paddingLeft: '3.5rem', paddingRight: '0', paddingTop: '6rem', overflow: 'visible' }}
       >
-        <div key={animationKey} style={{ display: 'grid', gridTemplateColumns: '420px 1fr', alignItems: 'center', gap: '2rem' }}>
+        <div key={animationKey} style={{ display: 'grid', gridTemplateColumns: '520px 1fr', alignItems: 'center', gap: '2rem' }}>
           {/* ── LEFT: text content ── */}
           <div>
             {/* Badge */}
@@ -260,18 +260,21 @@ export default function Hero() {
               className="mb-5"
             >
               <div
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg"
+                className="inline-flex items-center"
                 style={{
-                  border: '1px solid rgba(59,130,246,0.25)',
-                  background: 'rgba(10,18,50,0.9)',
+                  border: '1px solid rgba(96,165,250,0.25)',
+                  background: 'rgba(8,14,42,0.95)',
                   backdropFilter: 'blur(14px)',
+                  borderRadius: '9999px',
+                  gap: '0.6rem',
+                  padding: '0.55rem 1.25rem',
                 }}
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                   <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
                 </svg>
                 <span
-                  style={{ color: '#cbd5e1', fontSize: '0.8rem', fontWeight: 500, letterSpacing: '0.01em', whiteSpace: 'nowrap' }}
+                  style={{ color: '#e2e8f0', fontSize: '0.8rem', fontWeight: 400, letterSpacing: '0.01em', whiteSpace: 'nowrap' }}
                 >
                   Smart Transport Coordination System for Cagayan
                 </span>
@@ -306,20 +309,20 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.22 }}
               style={{ maxWidth: '460px', marginBottom: '1.75rem' }}
             >
-              <p style={{ color: '#94a3b8', fontSize: '1.15rem', lineHeight: 1.7, marginBottom: '1rem' }}>
+              <p style={{ color: '#e2e8f0', fontSize: '1.15rem', lineHeight: 1.7, marginBottom: '1rem' }}>
                 <span style={{
                   background: 'linear-gradient(90deg, #a78bfa, #60a5fa)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   fontWeight: 600,
-                }}>Smarter,</span>{' '}coordinated public transportation across Cagayan.
+                }}>Smarter,</span>{' '}data-driven public transportation across Cagayan.
               </p>
-              <p style={{ color: '#64748b', fontSize: '0.93rem', lineHeight: 1.75, marginBottom: '0.75rem' }}>
-                PARA modernizes transportation through real-time vehicle tracking, transportation analytics, and centralized coordination for commuters, drivers, cooperatives, and LGUs.
+              <p style={{ color: '#cbd5e1', fontSize: '0.93rem', lineHeight: 1.75, marginBottom: '0.75rem' }}>
+                PARA is a smart transport coordination system designed to modernize public utility vehicle operations through live tracking, operational insights, and centralized transportation management.
               </p>
-              <p style={{ color: '#64748b', fontSize: '0.93rem', lineHeight: 1.75 }}>
-                Built to create a safer, more connected, and data-driven commuting experience.
+              <p style={{ color: '#cbd5e1', fontSize: '0.93rem', lineHeight: 1.75 }}>
+                Built for commuters. Designed for cooperatives. Powered for LGUs.
               </p>
             </motion.div>
 

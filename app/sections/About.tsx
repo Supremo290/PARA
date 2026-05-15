@@ -168,13 +168,13 @@ export default function About() {
               background: 'linear-gradient(135deg, rgba(15,23,60,0.95) 0%, rgba(10,14,39,1) 100%)',
             }}>
               <img
-                src="/vehicles.jpg"
+                src="/PARA-About.png"
                 alt="PARA transport vehicles on provincial road"
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
               />
               {/* Fallback visible when image is missing */}
-              <div style={{
+              {/* <div style={{
                 position: 'absolute', inset: 0,
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                 background: 'linear-gradient(135deg, rgba(29,78,216,0.22) 0%, rgba(10,14,39,0.9) 100%)',
@@ -183,7 +183,7 @@ export default function About() {
                 <span style={{ color: 'rgba(148,163,184,0.4)', fontSize: '0.78rem' }}>
                   Add vehicles photo to /public/vehicles.jpg
                 </span>
-              </div>
+              </div> */}
             </div>
 
             {/* Transport Modes Card */}
