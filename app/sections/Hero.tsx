@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { MapPin, BarChart3, Shield, Sparkles, ArrowRight, Play } from 'lucide-react'
+import { useRef, useState, useEffect } from 'react'
 
 const features = [
   {
@@ -23,8 +24,34 @@ const features = [
 ]
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [animationKey, setAnimationKey] = useState(0)
+  const wasHiddenRef = useRef(false)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && wasHiddenRef.current) {
+          // Section came back into view after being hidden — replay animations
+          setAnimationKey((k) => k + 1)
+          wasHiddenRef.current = false
+        } else if (!entry.isIntersecting) {
+          wasHiddenRef.current = true
+        }
+      },
+      { threshold: 0.15 }
+    )
+
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="relative min-h-screen w-full overflow-hidden flex flex-col justify-center"
       style={{
@@ -220,38 +247,36 @@ export default function Hero() {
       {/* ── Two-column layout ── */}
       <div
         className="relative z-10 w-full pb-20"
-        style={{ paddingLeft: '6rem', paddingRight: '0', paddingTop: '6rem', overflow: 'visible' }}
+        style={{ paddingLeft: '3.5rem', paddingRight: '0', paddingTop: '6rem', overflow: 'visible' }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '420px 1fr', alignItems: 'center', gap: '2rem' }}>
+        <div key={animationKey} style={{ display: 'grid', gridTemplateColumns: '420px 1fr', alignItems: 'center', gap: '2rem' }}>
           {/* ── LEFT: text content ── */}
           <div>
             {/* Badge */}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-8"
+              className="mb-5"
             >
               <div
-                className="badge-pulse inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg"
                 style={{
-                  border: '1px solid rgba(139,92,246,0.62)',
-                  background: 'rgba(15,12,50,0.68)',
+                  border: '1px solid rgba(59,130,246,0.25)',
+                  background: 'rgba(10,18,50,0.9)',
                   backdropFilter: 'blur(14px)',
                 }}
               >
-                <Sparkles
-                  className="w-4 h-4"
-                  style={{ color: '#a78bfa', filter: 'drop-shadow(0 0 5px rgba(167,139,250,0.9))' }}
-                />
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
                 <span
-                  className="text-xs font-semibold uppercase"
-                  style={{ color: '#a78bfa', textShadow: '0 0 12px rgba(167,139,250,0.75)', letterSpacing: '0.13em' }}
+                  style={{ color: '#cbd5e1', fontSize: '0.8rem', fontWeight: 500, letterSpacing: '0.01em', whiteSpace: 'nowrap' }}
                 >
-                  Smart Transport. Real Impact.
+                  Smart Transport Coordination System for Cagayan
                 </span>
               </div>
-            </motion.div> */}
+            </motion.div>
 
             {/* Heading */}
             <motion.div
@@ -262,39 +287,41 @@ export default function Hero() {
               style={{ isolation: 'isolate' }}
             >
               <h1
-                className="font-extrabold leading-[1.12] tracking-tight"
-                style={{ fontSize: 'clamp(2.4rem, 3vw, 3rem)' }}
+                className="font-extrabold leading-[1.1] tracking-tight"
+                style={{ fontSize: 'clamp(2rem, 3vw, 3.2rem)' }}
               >
-                <span style={{ display: 'block', color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>
-                  WELCOME TO PARA
+                <span style={{ display: 'block', color: '#ffffff', WebkitTextFillColor: '#ffffff', whiteSpace: 'nowrap' }}>
+                  No more guessing.
                 </span>
-                <span
-                  style={{
-                    display: 'block',
-                    whiteSpace: 'nowrap',
-                    isolation: 'isolate',
-                    background: 'linear-gradient(90deg, #a78bfa 0%, #818cf8 45%, #60a5fa 100%)',
-                    WebkitBackgroundClip: 'text',
-                    backgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    color: 'transparent',
-                    mixBlendMode: 'normal',
-                  }}
-                >
-                  PUV TRACKING SYSTEM
+                <span style={{ display: 'block', color: '#ffffff', WebkitTextFillColor: '#ffffff', whiteSpace: 'nowrap' }}>
+                  No more waiting.
                 </span>
               </h1>
             </motion.div>
 
             {/* Subheading */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.22 }}
-              style={{ color: '#94a3b8', fontSize: '1rem', lineHeight: 1.75, maxWidth: '460px', marginBottom: '1.75rem' }}
+              style={{ maxWidth: '460px', marginBottom: '1.75rem' }}
             >
-              PARA connects passengers, drivers, and transport cooperatives through real-time data, intelligent insights, and seamless coordination for a better commuting experience.
-            </motion.p>
+              <p style={{ color: '#94a3b8', fontSize: '1.15rem', lineHeight: 1.7, marginBottom: '1rem' }}>
+                <span style={{
+                  background: 'linear-gradient(90deg, #a78bfa, #60a5fa)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontWeight: 600,
+                }}>Smarter,</span>{' '}coordinated public transportation across Cagayan.
+              </p>
+              <p style={{ color: '#64748b', fontSize: '0.93rem', lineHeight: 1.75, marginBottom: '0.75rem' }}>
+                PARA modernizes transportation through real-time vehicle tracking, transportation analytics, and centralized coordination for commuters, drivers, cooperatives, and LGUs.
+              </p>
+              <p style={{ color: '#64748b', fontSize: '0.93rem', lineHeight: 1.75 }}>
+                Built to create a safer, more connected, and data-driven commuting experience.
+              </p>
+            </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
