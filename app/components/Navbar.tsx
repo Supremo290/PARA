@@ -18,11 +18,34 @@ export default function Navbar() {
   ]
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+    // Navbar background on scroll
+    const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    // Auto-highlight active nav link based on visible section
+    const sectionIds = navLinks.map((l) => l.href.replace('#', ''))
+    const observers: IntersectionObserver[] = []
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (!el) return
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            const matched = navLinks.find((l) => l.href === `#${id}`)
+            if (matched) setActiveLink(matched.label)
+          }
+        },
+        { threshold: 0.4 }
+      )
+      obs.observe(el)
+      observers.push(obs)
+    })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      observers.forEach((obs) => obs.disconnect())
+    }
   }, [])
 
   return (

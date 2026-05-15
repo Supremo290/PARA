@@ -88,7 +88,7 @@ export default function About() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             {/* Label */}
             <div style={{ marginBottom: '1.25rem' }}>
@@ -131,7 +131,7 @@ export default function About() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.12 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}
                   >
                     <Icon style={{ width: '22px', height: '22px', color: stat.color, flexShrink: 0 }} />
@@ -154,7 +154,7 @@ export default function About() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             style={{ position: 'relative' }}
           >
             {/* Vehicle photo — replace "/vehicles.jpg" with your actual image path */}
@@ -231,7 +231,7 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           style={{ textAlign: 'center', marginBottom: '2.5rem' }}
         >
           <h3 style={{ color: '#ffffff', fontSize: '1.5rem', fontWeight: 700 }}>What PARA Brings</h3>
@@ -247,7 +247,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 style={{
                   background: 'rgba(10, 16, 42, 0.8)',
                   backdropFilter: 'blur(16px)',
@@ -288,7 +288,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           style={{
             background: 'rgba(10,16,42,0.85)',
             backdropFilter: 'blur(20px)',
