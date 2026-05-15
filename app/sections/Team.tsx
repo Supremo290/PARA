@@ -10,7 +10,6 @@ const team = [
     roleColor: '#3b82f6',
     icon: Code2,
     iconBg: '#3b82f6',
-    // ↓ Replace with actual image path e.g. '/team/christian.jpg'
     image: '/images/CTO-Robbie.jpeg',
     initials: 'RF',
     desc: 'Handles system development, frontend and backend, and ensures that PARA runs smoothly and efficiently.',
@@ -22,7 +21,6 @@ const team = [
     roleColor: '#3b82f6',
     icon: BarChart2,
     iconBg: '#3b82f6',
-    // ↓ Replace with actual image path e.g. '/team/kyle.jpg'
     image: '/images/CEO-Rine.jpeg',
     initials: 'RS',
     desc: 'Designs user-friendly interfaces and creates seamless experiences for passengers, drivers, and administrators.',
@@ -34,7 +32,6 @@ const team = [
     roleColor: '#3b82f6',
     icon: Database,
     iconBg: '#3b82f6',
-    // ↓ Replace with actual image path e.g. '/team/angela.jpg'
     image: '/images/CMO-Dane.jpeg',
     initials: 'DG',
     desc: 'Analyzes transportation data, builds insights and dashboards, and supports data-driven decision making.',
@@ -112,6 +109,7 @@ export default function Team() {
           position: relative;
           margin-bottom: 1.5rem;
           overflow: hidden;
+          flex-shrink: 0;
         }
         .avatar-img {
           width: 160px;
@@ -121,6 +119,20 @@ export default function Team() {
           border-radius: 50%;
           display: block;
           flex-shrink: 0;
+        }
+        .avatar-fallback {
+          width: 160px;
+          height: 160px;
+          border-radius: 50%;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: rgba(59,130,246,0.7);
+          user-select: none;
+          position: absolute;
+          inset: 0;
         }
         .role-icon-badge {
           position: absolute;
@@ -133,6 +145,7 @@ export default function Team() {
           align-items: center;
           justify-content: center;
           border: 2px solid rgba(4,9,30,1);
+          z-index: 2;
         }
       `}</style>
 
@@ -150,7 +163,6 @@ export default function Team() {
           viewport={{ once: false }}
           style={{ textAlign: 'center', marginBottom: '4rem' }}
         >
-          {/* Label */}
           <div style={{ marginBottom: '0.75rem' }}>
             <span style={{
               color: '#3b82f6',
@@ -163,7 +175,6 @@ export default function Team() {
             </span>
           </div>
 
-          {/* Title */}
           <h2 style={{
             fontSize: 'clamp(2.2rem, 4vw, 3.25rem)',
             fontWeight: 800,
@@ -174,7 +185,6 @@ export default function Team() {
             The Minds Behind PARA
           </h2>
 
-          {/* Subtitle */}
           <p style={{
             color: '#94a3b8',
             fontSize: '1.05rem',
@@ -205,37 +215,24 @@ export default function Team() {
               >
                 {/* Avatar */}
                 <div className="avatar-ring">
-                  {member.image ? (
-                    /* ── When you have a photo, it renders here ── */
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="avatar-img"
-                      width={160}
-                      height={160}
-                      onError={(e) => {
-                        const target = e.currentTarget
-                        target.style.display = 'none'
-                        const fallback = target.nextElementSibling as HTMLElement
-                        if (fallback) fallback.style.display = 'flex'
-                      }}
-                    />
-                  ) : (
-                    /* ── Placeholder shown until photo is added ── */
-                    <span style={{
-                      fontSize: '2.5rem',
-                      fontWeight: 700,
-                      color: 'rgba(59,130,246,0.5)',
-                      userSelect: 'none',
-                      display: 'none',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '100%',
-                      height: '100%',
-                    }}>
-                      {member.initials}
-                    </span>
-                  )}
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="avatar-img"
+                    width={160}
+                    height={160}
+                    onError={(e) => {
+                      // Hide the broken image
+                      e.currentTarget.style.display = 'none'
+                      // Show the initials fallback sibling
+                      const fallback = e.currentTarget.nextElementSibling as HTMLElement | null
+                      if (fallback) fallback.style.display = 'flex'
+                    }}
+                  />
+                  {/* Initials fallback — hidden by default, shown via onError above */}
+                  <div className="avatar-fallback">
+                    {member.initials}
+                  </div>
 
                   {/* Role icon badge */}
                   <div

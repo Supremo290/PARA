@@ -13,23 +13,22 @@ export default function Navbar() {
     { label: 'About',        href: '#about' },
     { label: 'Features',     href: '#features' },
     { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Traction', href: '#traction' },
+    { label: 'Traction',     href: '#traction' },
     { label: 'Team',         href: '#team' },
     { label: 'Contact',      href: '#contact' },
   ]
 
   useEffect(() => {
-    // Navbar background on scroll
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
 
-    // Auto-highlight active nav link based on visible section
     const sectionIds = navLinks.map((l) => l.href.replace('#', ''))
     const observers: IntersectionObserver[] = []
 
     sectionIds.forEach((id) => {
       const el = document.getElementById(id)
       if (!el) return
+
       const obs = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -37,7 +36,13 @@ export default function Navbar() {
             if (matched) setActiveLink(matched.label)
           }
         },
-        { threshold: 0.4 }
+        {
+          // Use rootMargin to trigger when section top enters the middle of the viewport.
+          // threshold:0 means as soon as ANY pixel is visible it fires, and rootMargin
+          // shrinks the detection zone so only the "most visible" section wins.
+          threshold: 0,
+          rootMargin: '-40% 0px -55% 0px',
+        }
       )
       obs.observe(el)
       observers.push(obs)
@@ -75,7 +80,6 @@ export default function Navbar() {
               style={{ objectFit: 'contain', flexShrink: 0 }}
               priority
             />
-            {/* Brand name + tagline */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1, marginLeft: '-8px' }}>
               <span style={{
                 fontSize: '1.15rem',
