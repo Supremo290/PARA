@@ -37,20 +37,40 @@ export default function Navbar() {
       <div style={{ paddingLeft: '0.5rem', paddingRight: '3rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '96px' }}>
 
-          {/* Logo — bigger, aligned with hero text below */}
+          {/* Logo + Brand text */}
           <Link
             href="/"
-            style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.1rem', textDecoration: 'none', flexShrink: 0 }}
             onClick={() => setActiveLink('Home')}
           >
             <Image
               src="/PARA-logo.png"
               alt="PARA Logo"
-width={200}
-height={85}
+              width={120}
+              height={65}
               style={{ objectFit: 'contain' }}
               priority
             />
+            {/* Brand name + tagline */}
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1 }}>
+              <span style={{
+                fontSize: '1.15rem',
+                fontWeight: 700,
+                color: '#ffffff',
+                letterSpacing: '0.04em',
+              }}>
+                PARA
+              </span>
+              <span style={{
+                fontSize: '0.7rem',
+                fontWeight: 400,
+                color: '#94a3b8',
+                letterSpacing: '0.03em',
+                marginTop: '3px',
+              }}>
+                PUV Tracking System
+              </span>
+            </div>
           </Link>
 
           {/* Nav links */}
