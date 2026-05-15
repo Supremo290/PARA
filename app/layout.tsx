@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'PARA - Smart Transportation Tracking Platform',
   description: 'Monitor passengers, drivers, and cooperatives in real time with PARA. Smart transportation management for modern logistics.',
   viewport: 'width=device-width, initial-scale=1',
+ icons: {
+  icon: '/PARA-logo.png',
+},
   openGraph: {
     title: 'PARA - Smart Transportation Tracking Platform',
     description: 'Monitor passengers, drivers, and cooperatives in real time',

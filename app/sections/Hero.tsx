@@ -306,10 +306,11 @@ export default function Hero() {
             >
               {/* Get Started */}
               <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '0.55rem',
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.97 }}
+  onClick={() => window.open('https://paravanph.com', '_blank')}
+  style={{
+    display: 'flex', alignItems: 'center', gap: '0.55rem',
                   padding: '0.75rem 1.6rem',
                   borderRadius: '0.6rem',
                   background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
