@@ -3,12 +3,6 @@
 import { motion } from 'framer-motion'
 import { MapPin, BarChart3, Bot, Users, Bus, Car, Truck, ShieldCheck } from 'lucide-react'
 
-const stats = [
-  { icon: Users,   value: '25K+',   label: 'Active Commuters', color: '#3b82f6' },
-  { icon: Bus,     value: '1,200+', label: 'Active Vehicles',   color: '#22c55e' },
-  { icon: MapPin,  value: '320+',   label: 'Routes Covered',    color: '#a78bfa' },
-]
-
 const modes = [
   { icon: Bus,   label: 'Vans',       desc: 'Municipality-to-municipality travel', color: '#3b82f6' },
   { icon: Car,   label: 'Taxis',      desc: 'City transportation',                 color: '#eab308' },
@@ -115,38 +109,11 @@ export default function About() {
 
             {/* Description */}
             <p style={{ color: '#94a3b8', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1rem' }}>
-              PARA is an AI-driven decision support system designed to modernize provincial public transportation. It connects commuters, drivers, and transport cooperatives through real-time data, predictive analytics, and intelligent recommendations.
+              PARA is an AI-driven decision support system designed to modernize provincial public transportation. It connects commuters, drivers, and transport cooperatives through real-time data, predictive analytics, and centralized coordination.
             </p>
             <p style={{ color: '#64748b', fontSize: '1rem', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Our mission is to create a more efficient, reliable, and convenient transportation experience for every commuter in the provinces.
             </p>
-
-            {/* Stats */}
-            <div style={{ display: 'flex', gap: '2.5rem' }}>
-              {stats.map((stat, i) => {
-                const Icon = stat.icon
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.12 }}
-                    viewport={{ once: false }}
-                    style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
-                  >
-                    <Icon style={{ width: '28px', height: '28px', color: stat.color, flexShrink: 0 }} />
-                    <div>
-                      <div style={{ fontSize: '1.6rem', fontWeight: 800, color: stat.color, lineHeight: 1 }}>
-                        {stat.value}
-                      </div>
-                      <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '3px' }}>
-                        {stat.label}
-                      </div>
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
           </motion.div>
 
           {/* Right: Vehicle image placeholder + modes card */}
@@ -173,17 +140,6 @@ export default function About() {
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
               />
-              {/* Fallback visible when image is missing */}
-              {/* <div style={{
-                position: 'absolute', inset: 0,
-                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                background: 'linear-gradient(135deg, rgba(29,78,216,0.22) 0%, rgba(10,14,39,0.9) 100%)',
-              }}>
-                <Bus style={{ width: '52px', height: '52px', color: 'rgba(59,130,246,0.45)', marginBottom: '0.6rem' }} />
-                <span style={{ color: 'rgba(148,163,184,0.4)', fontSize: '0.78rem' }}>
-                  Add vehicles photo to /public/vehicles.jpg
-                </span>
-              </div> */}
             </div>
 
             {/* Transport Modes Card */}

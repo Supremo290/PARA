@@ -15,7 +15,7 @@ export default function Navbar() {
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Traction',     href: '#traction' },
     { label: 'Team',         href: '#team' },
-    { label: 'Contact',      href: '#contact' },
+    // { label: 'Contact',      href: '#contact' },
   ]
 
   useEffect(() => {
