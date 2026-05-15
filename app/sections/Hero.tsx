@@ -27,15 +27,15 @@ export default function Hero() {
     <section
       id="home"
       className="relative min-h-screen w-full overflow-hidden flex flex-col justify-center"
-      style={{ background: '#04091e' }}
+      style={{
+        background: '#04091e',
+        backgroundImage: 'linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px)',
+        backgroundSize: '60px 60px',
+      }}
     >
       <style>{`
         .hero-grid {
-          position: absolute; inset: 0; pointer-events: none;
-          background-image:
-            linear-gradient(rgba(139,92,246,0.045) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(99,102,241,0.045) 1px, transparent 1px);
-          background-size: 64px 64px;
+          display: none;
         }
 
         @keyframes orbFloat1 {
