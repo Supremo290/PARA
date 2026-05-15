@@ -13,6 +13,7 @@ export default function Navbar() {
     { label: 'About',        href: '#about' },
     { label: 'Features',     href: '#features' },
     { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Traction', href: '#traction' },
     { label: 'Team',         href: '#team' },
     { label: 'Contact',      href: '#contact' },
   ]

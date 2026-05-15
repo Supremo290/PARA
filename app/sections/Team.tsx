@@ -114,10 +114,13 @@ export default function Team() {
           overflow: hidden;
         }
         .avatar-img {
-          width: 100%;
-          height: 100%;
+          width: 160px;
+          height: 160px;
           object-fit: cover;
+          object-position: center top;
           border-radius: 50%;
+          display: block;
+          flex-shrink: 0;
         }
         .role-icon-badge {
           position: absolute;
@@ -208,6 +211,14 @@ export default function Team() {
                       src={member.image}
                       alt={member.name}
                       className="avatar-img"
+                      width={160}
+                      height={160}
+                      onError={(e) => {
+                        const target = e.currentTarget
+                        target.style.display = 'none'
+                        const fallback = target.nextElementSibling as HTMLElement
+                        if (fallback) fallback.style.display = 'flex'
+                      }}
                     />
                   ) : (
                     /* ── Placeholder shown until photo is added ── */
@@ -216,6 +227,11 @@ export default function Team() {
                       fontWeight: 700,
                       color: 'rgba(59,130,246,0.5)',
                       userSelect: 'none',
+                      display: 'none',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '100%',
+                      height: '100%',
                     }}>
                       {member.initials}
                     </span>
