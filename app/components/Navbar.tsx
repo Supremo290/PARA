@@ -46,13 +46,13 @@ export default function Navbar() {
             <Image
               src="/PARA-logo.png"
               alt="PARA Logo"
-              width={120}
-              height={65}
-              style={{ objectFit: 'contain' }}
+              width={72}
+              height={72}
+              style={{ objectFit: 'contain', flexShrink: 0 }}
               priority
             />
             {/* Brand name + tagline */}
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1, marginLeft: '-8px' }}>
               <span style={{
                 fontSize: '1.15rem',
                 fontWeight: 700,

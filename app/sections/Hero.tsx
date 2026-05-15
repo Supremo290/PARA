@@ -417,7 +417,7 @@ export default function Hero() {
             {/* Floating device image */}
             <div className="device-float" style={{ position: 'relative', zIndex: 1, width: '100%' }}>
               <Image
-                src="/PARA-phone-desktop.png"
+                src="/Final-PARA.png"
                 alt="PARA dashboard and mobile app preview"
                 width={2200}
                 height={1610}
