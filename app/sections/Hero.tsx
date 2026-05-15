@@ -222,8 +222,7 @@ export default function Hero() {
         className="relative z-10 w-full pb-20"
         style={{ paddingLeft: '6rem', paddingRight: '0', paddingTop: '6rem', overflow: 'visible' }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '3fr 9fr', alignItems: 'center', gap: '2rem' }}>
-
+        <div style={{ display: 'grid', gridTemplateColumns: '420px 1fr', alignItems: 'center', gap: '2rem' }}>
           {/* ── LEFT: text content ── */}
           <div>
             {/* Badge */}
@@ -264,7 +263,7 @@ export default function Hero() {
             >
               <h1
                 className="font-extrabold leading-[1.12] tracking-tight"
-                style={{ fontSize: 'clamp(2rem, 2.8vw, 2.8rem)' }}
+                style={{ fontSize: 'clamp(2.4rem, 3vw, 3rem)' }}
               >
                 <span style={{ display: 'block', color: '#ffffff', WebkitTextFillColor: '#ffffff' }}>
                   WELCOME TO PARA
@@ -420,8 +419,8 @@ export default function Hero() {
               <Image
                 src="/PARA-phone-desktop.png"
                 alt="PARA dashboard and mobile app preview"
-                width={1900}
-                height={1390}
+                width={2200}
+                height={1610}
                 style={{
                   width: '100%',
                   height: 'auto',
