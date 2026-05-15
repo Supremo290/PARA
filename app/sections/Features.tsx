@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 import { MapPin, Users, BarChart3, Zap, Shield } from 'lucide-react'
 
 const features = [
-  // {
-  //   icon: MapPin,
-  //   title: 'Real-Time Tracking',
-  //   description: 'Monitor vehicles and passengers in real-time with GPS accuracy.',
-  // },
+  {
+    icon: MapPin,
+    title: 'Real-Time Tracking',
+    description: 'Monitor vehicles and passengers in real-time with GPS accuracy.',
+  },
   {
     icon: Users,
     title: 'Driver Management',

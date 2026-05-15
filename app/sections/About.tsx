@@ -50,7 +50,7 @@ export default function About() {
   return (
     <section
       id="about"
-      style={{ background: '#04091e', position: 'relative', padding: '6rem 1rem', overflow: 'hidden' }}
+      style={{ background: '#04091e', position: 'relative', padding: '7rem 4rem', overflow: 'hidden' }}
     >
       <style>{`
         .about-grid {
@@ -78,10 +78,10 @@ export default function About() {
       <div className="about-orb-left" />
       <div className="about-orb-right" />
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
         {/* ── Top Section: Text (left) + Vehicle Image (right) ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3.5rem', alignItems: 'center', marginBottom: '4rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center', marginBottom: '5rem' }}>
 
           {/* Left: Copy */}
           <motion.div
@@ -92,14 +92,14 @@ export default function About() {
           >
             {/* Label */}
             <div style={{ marginBottom: '1.25rem' }}>
-              <span style={{ color: '#3b82f6', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+              <span style={{ color: '#3b82f6', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 About PARA
               </span>
               <div style={{ width: '36px', height: '2px', background: '#3b82f6', marginTop: '6px', borderRadius: '2px' }} />
             </div>
 
             {/* Heading */}
-            <h2 style={{ fontSize: 'clamp(1.9rem, 3vw, 2.75rem)', fontWeight: 800, lineHeight: 1.18, color: '#ffffff', marginBottom: '1.25rem' }}>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)', fontWeight: 800, lineHeight: 1.18, color: '#ffffff', marginBottom: '1.5rem' }}>
               Building Smarter Mobility{' '}
               <br />
               for{' '}
@@ -114,10 +114,10 @@ export default function About() {
             </h2>
 
             {/* Description */}
-            <p style={{ color: '#94a3b8', fontSize: '0.97rem', lineHeight: 1.8, marginBottom: '1rem' }}>
+            <p style={{ color: '#94a3b8', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1rem' }}>
               PARA is an AI-driven decision support system designed to modernize provincial public transportation. It connects commuters, drivers, and transport cooperatives through real-time data, predictive analytics, and intelligent recommendations.
             </p>
-            <p style={{ color: '#64748b', fontSize: '0.93rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+            <p style={{ color: '#64748b', fontSize: '1rem', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Our mission is to create a more efficient, reliable, and convenient transportation experience for every commuter in the provinces.
             </p>
 
@@ -132,14 +132,14 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.12 }}
                     viewport={{ once: false }}
-                    style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}
+                    style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
                   >
-                    <Icon style={{ width: '22px', height: '22px', color: stat.color, flexShrink: 0 }} />
+                    <Icon style={{ width: '28px', height: '28px', color: stat.color, flexShrink: 0 }} />
                     <div>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: stat.color, lineHeight: 1 }}>
+                      <div style={{ fontSize: '1.6rem', fontWeight: 800, color: stat.color, lineHeight: 1 }}>
                         {stat.value}
                       </div>
-                      <div style={{ fontSize: '0.72rem', color: '#64748b', marginTop: '3px' }}>
+                      <div style={{ fontSize: '0.82rem', color: '#64748b', marginTop: '3px' }}>
                         {stat.label}
                       </div>
                     </div>
@@ -192,12 +192,12 @@ export default function About() {
               backdropFilter: 'blur(20px)',
               border: '1px solid rgba(59,130,246,0.15)',
               borderRadius: '0.875rem',
-              padding: '1.25rem 1.5rem',
+              padding: '1.5rem 2rem',
             }}>
-              <p style={{ color: '#ffffff', fontSize: '0.85rem', fontWeight: 600, textAlign: 'center', marginBottom: '1rem' }}>
+              <p style={{ color: '#ffffff', fontSize: '0.95rem', fontWeight: 600, textAlign: 'center', marginBottom: '1.25rem' }}>
                 We support different transportation modes
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
                 {modes.map((mode, i) => {
                   const Icon = mode.icon
                   const rgb = mode.color === '#3b82f6'
@@ -208,16 +208,16 @@ export default function About() {
                   return (
                     <div key={i} style={{ textAlign: 'center' }}>
                       <div style={{
-                        width: '40px', height: '40px', borderRadius: '50%',
+                        width: '50px', height: '50px', borderRadius: '50%',
                         background: `rgba(${rgb},0.15)`,
                         border: `1px solid rgba(${rgb},0.3)`,
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        margin: '0 auto 0.5rem',
+                        margin: '0 auto 0.6rem',
                       }}>
-                        <Icon style={{ width: '18px', height: '18px', color: mode.color }} />
+                        <Icon style={{ width: '22px', height: '22px', color: mode.color }} />
                       </div>
-                      <div style={{ color: '#ffffff', fontSize: '0.8rem', fontWeight: 600 }}>{mode.label}</div>
-                      <div style={{ color: '#64748b', fontSize: '0.7rem', lineHeight: 1.4, marginTop: '2px' }}>{mode.desc}</div>
+                      <div style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: 600 }}>{mode.label}</div>
+                      <div style={{ color: '#64748b', fontSize: '0.78rem', lineHeight: 1.4, marginTop: '3px' }}>{mode.desc}</div>
                     </div>
                   )
                 })}
@@ -232,13 +232,13 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: false }}
-          style={{ textAlign: 'center', marginBottom: '2.5rem' }}
+          style={{ textAlign: 'center', marginBottom: '3rem' }}
         >
-          <h3 style={{ color: '#ffffff', fontSize: '1.5rem', fontWeight: 700 }}>What PARA Brings</h3>
-          <div style={{ width: '48px', height: '3px', background: 'linear-gradient(90deg, #3b82f6, #a78bfa)', margin: '0.75rem auto 0', borderRadius: '2px' }} />
+          <h3 style={{ color: '#ffffff', fontSize: '2rem', fontWeight: 700 }}>What PARA Brings</h3>
+          <div style={{ width: '56px', height: '3px', background: 'linear-gradient(90deg, #3b82f6, #a78bfa)', margin: '0.75rem auto 0', borderRadius: '2px' }} />
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem', marginBottom: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.75rem', marginBottom: '3.5rem' }}>
           {brings.map((item, i) => {
             const Icon = item.icon
             return (
@@ -253,7 +253,7 @@ export default function About() {
                   backdropFilter: 'blur(16px)',
                   border: '1px solid rgba(59,130,246,0.12)',
                   borderRadius: '1rem',
-                  padding: '1.5rem',
+                  padding: '2rem',
                   position: 'relative',
                   overflow: 'hidden',
                 }}
@@ -265,17 +265,17 @@ export default function About() {
                 }} />
 
                 <div style={{
-                  width: '46px', height: '46px', borderRadius: '0.625rem',
+                  width: '56px', height: '56px', borderRadius: '0.75rem',
                   background: item.bg,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: '1rem',
+                  marginBottom: '1.25rem',
                 }}>
-                  <Icon style={{ width: '22px', height: '22px', color: item.color }} />
+                  <Icon style={{ width: '26px', height: '26px', color: item.color }} />
                 </div>
-                <h4 style={{ color: '#ffffff', fontSize: '0.92rem', fontWeight: 700, marginBottom: '0.5rem' }}>
+                <h4 style={{ color: '#ffffff', fontSize: '1.05rem', fontWeight: 700, marginBottom: '0.6rem' }}>
                   {item.title}
                 </h4>
-                <p style={{ color: '#64748b', fontSize: '0.78rem', lineHeight: 1.65 }}>
+                <p style={{ color: '#64748b', fontSize: '0.88rem', lineHeight: 1.7 }}>
                   {item.desc}
                 </p>
               </motion.div>
@@ -294,26 +294,26 @@ export default function About() {
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(59,130,246,0.18)',
             borderRadius: '1rem',
-            padding: '1.5rem 2rem',
+            padding: '2rem 2.5rem',
             display: 'flex',
             alignItems: 'center',
-            gap: '1.25rem',
+            gap: '1.5rem',
           }}
         >
           <div style={{
-            width: '52px', height: '52px', borderRadius: '50%', flexShrink: 0,
+            width: '64px', height: '64px', borderRadius: '50%', flexShrink: 0,
             background: 'rgba(59,130,246,0.15)',
             border: '1px solid rgba(59,130,246,0.3)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            <ShieldCheck style={{ width: '24px', height: '24px', color: '#3b82f6' }} />
+            <ShieldCheck style={{ width: '30px', height: '30px', color: '#3b82f6' }} />
           </div>
           <div>
-            <p style={{ color: '#e2e8f0', fontSize: '0.97rem', fontWeight: 500, marginBottom: '2px' }}>
+            <p style={{ color: '#e2e8f0', fontSize: '1.1rem', fontWeight: 500, marginBottom: '2px' }}>
               PARA is more than a tracking system.
             </p>
             <p style={{
-              fontSize: '0.97rem', fontWeight: 500,
+              fontSize: '1.1rem', fontWeight: 500,
               background: 'linear-gradient(90deg, #3b82f6, #60a5fa)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
