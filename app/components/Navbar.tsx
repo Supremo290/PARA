@@ -15,7 +15,7 @@ export default function Navbar() {
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Traction',     href: '#traction' },
     { label: 'Team',         href: '#team' },
-    // { label: 'Contact',      href: '#contact' },
+    { label: 'Contact',      href: '#contact' },
   ]
 
   useEffect(() => {
@@ -37,9 +37,6 @@ export default function Navbar() {
           }
         },
         {
-          // Use rootMargin to trigger when section top enters the middle of the viewport.
-          // threshold:0 means as soon as ANY pixel is visible it fires, and rootMargin
-          // shrinks the detection zone so only the "most visible" section wins.
           threshold: 0,
           rootMargin: '-40% 0px -55% 0px',
         }

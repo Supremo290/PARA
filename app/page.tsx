@@ -6,6 +6,7 @@ import Features from './sections/Features'
 // import Footer from './components/Footer'
 import Team from './sections/Team'
 import Traction from './sections/Traction'
+import Contact from './sections/Contact'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Features />
       <Traction /> 
       <Team />
+      <Contact />
       {/* <CTA /> */}
       {/* <Footer /> */}
     </main>
