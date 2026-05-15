@@ -6,36 +6,27 @@ import { Code2, BarChart2, Database } from 'lucide-react'
 const team = [
   {
     name: 'Robbie Fuggan',
-    role: 'Full Stack Developer',
+    role: 'Chief Technology Officer',
     roleColor: '#3b82f6',
     icon: Code2,
     iconBg: '#3b82f6',
-    image: '/images/CTO-Robbie.jpeg',
     initials: 'RF',
-    desc: 'Handles system development, frontend and backend, and ensures that PARA runs smoothly and efficiently.',
-    skills: ['React', 'Laravel', 'PHP', 'MySQL'],
   },
   {
     name: 'Regine Sorita',
-    role: 'UI/UX Designer',
+    role: 'Chief Executive Officer',
     roleColor: '#3b82f6',
     icon: BarChart2,
     iconBg: '#3b82f6',
-    image: '/images/CEO-Rine.jpeg',
     initials: 'RS',
-    desc: 'Designs user-friendly interfaces and creates seamless experiences for passengers, drivers, and administrators.',
-    skills: ['Figma', 'UI Design', 'Prototyping', 'UX Research'],
   },
   {
     name: 'Dane Gestiada',
-    role: 'Data Analyst',
+    role: 'Chief Marketing Officer',
     roleColor: '#3b82f6',
     icon: Database,
     iconBg: '#3b82f6',
-    image: '/images/CMO-Dane.jpeg',
     initials: 'DG',
-    desc: 'Analyzes transportation data, builds insights and dashboards, and supports data-driven decision making.',
-    skills: ['Python', 'SQL', 'Data Visualization', 'Excel'],
   },
 ]
 
@@ -74,7 +65,7 @@ export default function Team() {
           background: rgba(10, 16, 48, 0.85);
           border: 1px solid rgba(59,130,246,0.18);
           border-radius: 1.25rem;
-          padding: 2.5rem 2rem 2rem;
+          padding: 2.5rem 2rem;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -87,15 +78,6 @@ export default function Team() {
           border-color: rgba(59,130,246,0.45);
           transform: translateY(-6px);
           box-shadow: 0 20px 60px rgba(59,130,246,0.12);
-        }
-        .skill-badge {
-          background: rgba(15,23,60,0.9);
-          border: 1px solid rgba(59,130,246,0.2);
-          border-radius: 0.5rem;
-          padding: 0.3rem 0.75rem;
-          font-size: 0.78rem;
-          color: #94a3b8;
-          white-space: nowrap;
         }
         .avatar-ring {
           width: 160px;
@@ -111,28 +93,11 @@ export default function Team() {
           overflow: hidden;
           flex-shrink: 0;
         }
-        .avatar-img {
-          width: 160px;
-          height: 160px;
-          object-fit: cover;
-          object-position: center top;
-          border-radius: 50%;
-          display: block;
-          flex-shrink: 0;
-        }
-        .avatar-fallback {
-          width: 160px;
-          height: 160px;
-          border-radius: 50%;
-          display: none;
-          align-items: center;
-          justify-content: center;
-          font-size: 2.5rem;
-          font-weight: 700;
+        .avatar-initials {
+          font-size: 3.5rem;
+          font-weight: 800;
           color: rgba(59,130,246,0.7);
           user-select: none;
-          position: absolute;
-          inset: 0;
         }
         .role-icon-badge {
           position: absolute;
@@ -213,24 +178,9 @@ export default function Team() {
                 transition={{ duration: 0.6, delay: i * 0.12 }}
                 viewport={{ once: false }}
               >
-                {/* Avatar */}
+                {/* Avatar with Initials */}
                 <div className="avatar-ring">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="avatar-img"
-                    width={160}
-                    height={160}
-                    onError={(e) => {
-                      // Hide the broken image
-                      e.currentTarget.style.display = 'none'
-                      // Show the initials fallback sibling
-                      const fallback = e.currentTarget.nextElementSibling as HTMLElement | null
-                      if (fallback) fallback.style.display = 'flex'
-                    }}
-                  />
-                  {/* Initials fallback — hidden by default, shown via onError above */}
-                  <div className="avatar-fallback">
+                  <div className="avatar-initials">
                     {member.initials}
                   </div>
 
@@ -258,40 +208,9 @@ export default function Team() {
                   color: member.roleColor,
                   fontSize: '0.92rem',
                   fontWeight: 500,
-                  marginBottom: '1.1rem',
                 }}>
                   {member.role}
                 </p>
-
-                {/* Divider */}
-                <div style={{
-                  width: '100%',
-                  height: '1px',
-                  background: 'rgba(59,130,246,0.12)',
-                  marginBottom: '1.1rem',
-                }} />
-
-                {/* Description */}
-                <p style={{
-                  color: '#94a3b8',
-                  fontSize: '0.88rem',
-                  lineHeight: 1.75,
-                  marginBottom: '1.5rem',
-                }}>
-                  {member.desc}
-                </p>
-
-                {/* Skill badges */}
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '0.5rem',
-                  justifyContent: 'center',
-                }}>
-                  {member.skills.map((skill, j) => (
-                    <span key={j} className="skill-badge">{skill}</span>
-                  ))}
-                </div>
               </motion.div>
             )
           })}
