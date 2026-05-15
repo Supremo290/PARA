@@ -257,7 +257,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-5"
+              className="mb-10"
             >
               <div
                 className="inline-flex items-center"
@@ -316,7 +316,7 @@ export default function Hero() {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   fontWeight: 600,
-                }}>Smarter,</span>{' '}data-driven public transportation across Cagayan.
+                }}>Smarter, data-driven public transportation across Cagayan.</span>{' '}
               </p>
               <p style={{ color: '#cbd5e1', fontSize: '0.93rem', lineHeight: 1.75, marginBottom: '0.75rem' }}>
                 PARA is a smart transport coordination system designed to modernize public utility vehicle operations through live tracking, operational insights, and centralized transportation management.
