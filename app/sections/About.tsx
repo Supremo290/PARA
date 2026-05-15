@@ -168,7 +168,7 @@ export default function About() {
               background: 'linear-gradient(135deg, rgba(15,23,60,0.95) 0%, rgba(10,14,39,1) 100%)',
             }}>
               <img
-                src="/PARA-About.png"
+                src="/PARAVANS.png"
                 alt="PARA transport vehicles on provincial road"
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
