@@ -6,16 +6,16 @@ import Image from 'next/image'
 
 const team = [
   {
-    name: 'Robbie Fuggan',
-    role: 'Chief Technology Officer',
-    roleColor: '#3b82f6',
-    photo: '/CTO-Robbie.png',
-  },
-  {
     name: 'Regine Sorita',
     role: 'Chief Executive Officer',
     roleColor: '#3b82f6',
     photo: '/CEO-Rine.png',
+  },
+  {
+    name: 'Robbie Fuggan',
+    role: 'Chief Technology Officer',
+    roleColor: '#3b82f6',
+    photo: '/CTO-Robbie.png',
   },
   {
     name: 'Dane Gestiada',
@@ -60,7 +60,7 @@ export default function Team() {
           background: rgba(10, 16, 48, 0.85);
           border: 1px solid rgba(59,130,246,0.18);
           border-radius: 1.25rem;
-          padding: 2.5rem 2rem;
+          padding: 2.5rem 2rem 2rem;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -78,8 +78,8 @@ export default function Team() {
           box-shadow: 0 20px 60px rgba(59,130,246,0.12);
         }
         .avatar-ring {
-          width: 180px;
-          height: 180px;
+          width: 280px;
+          height: 280px;
           border-radius: 50%;
           border: 3px solid rgba(59,130,246,0.3);
           background: transparent;
@@ -106,7 +106,7 @@ export default function Team() {
       <div className="team-orb-left" />
       <div className="team-orb-right" />
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
         <motion.div
@@ -170,8 +170,8 @@ export default function Team() {
                   <Image
                     src={member.photo}
                     alt={member.name}
-                    width={180}
-                    height={180}
+                    width={280}
+                    height={280}
                     style={{
                       objectFit: 'cover',
                       borderRadius: '50%',
