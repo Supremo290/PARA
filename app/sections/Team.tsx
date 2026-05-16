@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 
 const team = [
@@ -65,8 +66,11 @@ export default function Team() {
           align-items: center;
           text-align: center;
           position: relative;
-          overflow: hidden;
           transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
         .team-card:hover {
           border-color: rgba(59,130,246,0.45);
@@ -74,11 +78,11 @@ export default function Team() {
           box-shadow: 0 20px 60px rgba(59,130,246,0.12);
         }
         .avatar-ring {
-          width: 160px;
-          height: 160px;
+          width: 180px;
+          height: 180px;
           border-radius: 50%;
           border: 3px solid rgba(59,130,246,0.3);
-          background: linear-gradient(135deg, rgba(29,78,216,0.3) 0%, rgba(10,14,39,0.9) 100%);
+          background: transparent;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -86,6 +90,8 @@ export default function Team() {
           margin-bottom: 1.5rem;
           overflow: hidden;
           flex-shrink: 0;
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
         }
         .avatar-initials {
           font-size: 3.5rem;
@@ -161,10 +167,17 @@ export default function Team() {
               >
                 {/* Avatar Photo */}
                 <div className="avatar-ring">
-                  <img
+                  <Image
                     src={member.photo}
                     alt={member.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                    width={180}
+                    height={180}
+                    style={{
+                      objectFit: 'cover',
+                      borderRadius: '50%',
+                      display: 'block',
+                    }}
+                    quality={100}
                   />
                 </div>
 
