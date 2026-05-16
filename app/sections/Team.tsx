@@ -1,32 +1,26 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code2, BarChart2, Database } from 'lucide-react'
+
 
 const team = [
   {
     name: 'Robbie Fuggan',
     role: 'Chief Technology Officer',
     roleColor: '#3b82f6',
-    icon: Code2,
-    iconBg: '#3b82f6',
-    initials: 'RF',
+    photo: '/CTO-Robbie.png',
   },
   {
     name: 'Regine Sorita',
     role: 'Chief Executive Officer',
     roleColor: '#3b82f6',
-    icon: BarChart2,
-    iconBg: '#3b82f6',
-    initials: 'RS',
+    photo: '/CEO-Rine.png',
   },
   {
     name: 'Dane Gestiada',
     role: 'Chief Marketing Officer',
     roleColor: '#3b82f6',
-    icon: Database,
-    iconBg: '#3b82f6',
-    initials: 'DG',
+    photo: '/CMO-Dane.png',
   },
 ]
 
@@ -99,19 +93,7 @@ export default function Team() {
           color: rgba(59,130,246,0.7);
           user-select: none;
         }
-        .role-icon-badge {
-          position: absolute;
-          bottom: 4px;
-          right: 4px;
-          width: 38px;
-          height: 38px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: 2px solid rgba(4,9,30,1);
-          z-index: 2;
-        }
+
       `}</style>
 
       <div className="team-grid-bg" />
@@ -168,7 +150,6 @@ export default function Team() {
           gap: '2rem',
         }}>
           {team.map((member, i) => {
-            const Icon = member.icon
             return (
               <motion.div
                 key={i}
@@ -178,19 +159,13 @@ export default function Team() {
                 transition={{ duration: 0.6, delay: i * 0.12 }}
                 viewport={{ once: false }}
               >
-                {/* Avatar with Initials */}
+                {/* Avatar Photo */}
                 <div className="avatar-ring">
-                  <div className="avatar-initials">
-                    {member.initials}
-                  </div>
-
-                  {/* Role icon badge */}
-                  <div
-                    className="role-icon-badge"
-                    style={{ background: member.iconBg }}
-                  >
-                    <Icon style={{ width: '18px', height: '18px', color: '#ffffff' }} />
-                  </div>
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                  />
                 </div>
 
                 {/* Name */}
